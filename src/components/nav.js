@@ -11,9 +11,12 @@ const Nav = () => {
         mood ? "bg-slate-100 text-black" : "bg-slate-950 text-white"
       }`}
     >
-      <div className="  flex items-center justify-between flex-row w-full lg:px-6">
-        <Link to="/" className={` sm:text-lg text-base ${hoverNav}`}>
-          mehran78am
+      <div className="flex items-center justify-between flex-row w-full lg:px-6">
+        <Link
+          to="https://github.com/mehran78am"
+          className={`sm:text-2xl text-xl  ${hoverNav}`}
+        >
+          <i className="fa fa-github"></i>
         </Link>
         <Link to="/" className={`sm:text-2xl text-xl ${hoverNav}`}>
           Shop

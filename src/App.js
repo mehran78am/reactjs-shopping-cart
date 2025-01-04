@@ -8,6 +8,7 @@ import ProductDetails from "./pages/details/ProductDetails";
 import { useEffect, useState } from "react";
 import Loading from "./components/Loading";
 import NotFound from "./pages/not-found/NotFound";
+import Checkout from "./pages/checkout/Checkout";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Shop />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
               <Route path="/product/:id" element={<ProductDetails />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

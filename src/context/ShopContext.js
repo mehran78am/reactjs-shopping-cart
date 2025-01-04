@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { PRODUCTS } from "../data/products";
 export const ShopContext = createContext(null);
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState();
@@ -28,6 +29,15 @@ export const ShopContextProvider = (props) => {
         })
       );
   };
+  const totalPrice = () => {
+    return cartItems.reduce((total, item) => {
+      const pr = PRODUCTS.find((p) => p.id === item.id);
+      if (pr) {
+        return total + pr.price * item.count;
+      }
+      return total;
+    }, 0);
+  };
   const removeFromCart = (itemId) => {
     setCartItems(
       cartItems.map((i) => {
@@ -37,6 +47,7 @@ export const ShopContextProvider = (props) => {
       })
     );
   };
+
   const resetCart = () => {
     setCartItems([]);
     localStorage.removeItem("assets");
@@ -54,6 +65,7 @@ export const ShopContextProvider = (props) => {
     removeFromCart,
     resetCart,
     handleChangeMood,
+    totalPrice,
     itemCount,
   };
   return (

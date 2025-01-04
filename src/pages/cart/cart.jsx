@@ -4,9 +4,12 @@ import { ShopContext } from "../../context/ShopContext";
 import Product from "../shop/product";
 import { Helmet } from "react-helmet";
 import emptyCart from "../../assets/empty-cart.png";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cartItems, resetCart, itemCount, mood } = useContext(ShopContext);
+  const { cartItems, resetCart, itemCount, mood, totalPrice } =
+    useContext(ShopContext);
+
   return (
     <div
       className={`transition-colors duration-500 h-screen pb-8 pt-20 overflow-y-scroll overflow-x-hidden ${
@@ -45,13 +48,13 @@ const Cart = () => {
       {itemCount > 0 ? (
         <div className="text-center">
           <button
-            className="w-2/4 md:w-1/4 mx-4 capitalize bg-red-500 text-white font-bold py-4 px-8 mt-8 mb-4 rounded transition-transform transform hover:scale-105 active:scale-95 active:bg-red-700"
+            className="w-3/4 md:w-1/3 mx-4 capitalize bg-red-500 text-white font-bold py-4 px-8 mt-8 mb-4 rounded transition-transform transform hover:scale-105 active:scale-95 active:bg-red-700"
             onClick={resetCart}
           >
             reset your cart
           </button>
-          <button className="w-2/4 md:w-1/4 uppercase bg-blue-500 text-white font-bold py-4 px-8 mt-8 mb-4 rounded transition-transform transform hover:scale-105 active:scale-95 active:bg-blue-700">
-            Checkout
+          <button className="w-3/4 md:w-1/3 uppercase bg-blue-500 text-white font-bold py-4 px-8 mt-8 mb-4 rounded transition-color  hover:bg-blue-600  active:bg-blue-700">
+            <Link to="/checkout">Checkout $ {totalPrice().toFixed(2)}</Link>
           </button>
         </div>
       ) : (

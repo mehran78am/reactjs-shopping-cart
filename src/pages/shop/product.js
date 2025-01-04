@@ -12,7 +12,7 @@ const Product = (props) => {
   const shopMood = mood ? "bg-gray-50  text-black" : "bg-gray-700 text-white";
   return (
     <div
-      className={`text-center border border-gray-700 rounded-lg p-4 shadow-md ${shopMood}`}
+      className={`text-center border border-gray-700 rounded-lg p-4 shadow-md transition-colors duration-500 ${shopMood}`}
     >
       <Link to={`/product/${id}`}>
         <img
@@ -30,8 +30,10 @@ const Product = (props) => {
           price : ${" "}
           <span className="text-green-500">
             {location.pathname.includes("cart")
-              ? cartItems?.filter((row) => row.id === id)[0]?.count * price
-              : price}
+              ? (
+                  cartItems?.filter((row) => row.id === id)[0]?.count * price
+                ).toFixed(2)
+              : price.toFixed(2)}
           </span>
         </p>
       </Link>
