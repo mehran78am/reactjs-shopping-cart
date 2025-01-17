@@ -1,19 +1,19 @@
-import samsungA05s from "../assets/a05s.webp";
-import samsungA15 from "../assets/a15.webp";
-import samsungA35 from "../assets/a35.webp";
-import samsungA55 from "../assets/a55.webp";
-import samsungS23 from "../assets/s23.oltra.webp";
-import samsungS24 from "../assets/s24.oltra.webp";
-import honorX9B from "../assets/honor.x9b.webp";
-import honor90 from "../assets/honor90.webp";
-import iphone11 from "../assets/iphone11.webp";
-import iphone13 from "../assets/iphone13.webp";
-import iphone13Pro from "../assets/iphone13pro.webp";
-import redmiNote12S from "../assets/note.12s.webp";
-import redmiNote13 from "../assets/redmi.note.13.webp";
-import redmiA13 from "../assets/redmi.a3.jpg";
-import pocoC65 from "../assets/poco.c65.webp";
-import pocoM5S from "../assets/poco.m5s.webp";
+import samsungA05s from "../assets/img/a05s.webp";
+import samsungA15 from "../assets/img/a15.webp";
+import samsungA35 from "../assets/img/a35.webp";
+import samsungA55 from "../assets/img/a55.webp";
+import samsungS23 from "../assets/img/s23.oltra.webp";
+import samsungS24 from "../assets/img/s24.oltra.webp";
+import honorX9B from "../assets/img/honor.x9b.webp";
+import honor90 from "../assets/img/honor90.webp";
+import iphone11 from "../assets/img/iphone11.webp";
+import iphone13 from "../assets/img/iphone13.webp";
+import iphone13Pro from "../assets/img/iphone13pro.webp";
+import redmiNote12S from "../assets/img/note.12s.webp";
+import redmiNote13 from "../assets/img/redmi.note.13.webp";
+import redmiA13 from "../assets/img/redmi.a3.jpg";
+import pocoC65 from "../assets/img/poco.c65.webp";
+import pocoM5S from "../assets/img/poco.m5s.webp";
 
 export const PRODUCTS = [
   {

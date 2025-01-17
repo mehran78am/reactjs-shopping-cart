@@ -16,8 +16,8 @@ const Shop = () => {
         <meta name="description" content="this is home page" />
       </Helmet>
       <div
-        className="grid grid-cols-1 gap-x-4 gap-y-8 
-        2sm:grid-cols-2 2sm:px-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5
+        className="grid grid-cols-1 gap-x-4 gap-y-8 px-16
+        2sm:grid-cols-2 2sm:px-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5
          xl:grid-cols-6 container mx-auto"
       >
         {PRODUCTS.map((productData) => {

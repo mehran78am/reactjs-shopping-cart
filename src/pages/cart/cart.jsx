@@ -3,7 +3,7 @@ import { PRODUCTS } from "../../data/products";
 import { ShopContext } from "../../context/ShopContext";
 import Product from "../shop/product";
 import { Helmet } from "react-helmet";
-import emptyCart from "../../assets/empty-cart.png";
+import emptyCart from "../../assets/img/empty-cart.png";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
@@ -12,7 +12,7 @@ const Cart = () => {
 
   return (
     <div
-      className={`transition-colors duration-500 h-screen pb-8 pt-20 overflow-y-scroll overflow-x-hidden ${
+      className={` transition-colors duration-500 h-screen pb-8 pt-20 px-10 overflow-y-scroll overflow-x-hidden ${
         mood ? "bg-white" : "bg-gray-900"
       }`}
     >
@@ -37,8 +37,8 @@ const Cart = () => {
         </span>
       </div>
       <div
-        className=" grid grid-cols-1 gap-x-4 gap-y-8 px-10
-        2sm:grid-cols-2 2sm:px-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 container mx-auto"
+        className=" grid grid-cols-1 gap-x-4 gap-y-8 px-16
+        2sm:grid-cols-2 2sm:px-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 container mx-auto"
       >
         {PRODUCTS.map((p) => {
           if (cartItems?.some((i) => i.id === p.id && i.count > 0))
@@ -53,13 +53,16 @@ const Cart = () => {
           >
             reset your cart
           </button>
-          <button className="w-3/4 md:w-1/3 uppercase bg-blue-500 text-white font-bold py-4 px-8 mt-8 mb-4 rounded transition-color  hover:bg-blue-600  active:bg-blue-700">
+          <button
+            onClick={resetCart}
+            className="w-3/4 md:w-1/3 uppercase bg-blue-500 text-white font-bold py-4 px-8 mt-8 mb-4 rounded transition-color  hover:bg-blue-600  active:bg-blue-700"
+          >
             <Link to="/checkout">Checkout $ {totalPrice().toFixed(2)}</Link>
           </button>
         </div>
       ) : (
         <div className="flex items-center justify-center mt-4">
-          <img src={emptyCart} alt="" />
+          <img src={emptyCart} alt="emptycart" />
         </div>
       )}
     </div>
